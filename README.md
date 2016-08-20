@@ -12,3 +12,10 @@
 
 References
 http://benchung.com/loading-animation-three-js/
+
+
+Tools:
+
+Text creations:
+http://www.flamingtext.com/logo/Design-3D-Text
+
