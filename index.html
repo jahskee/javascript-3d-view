@@ -96,6 +96,8 @@
             /* Scene */
 
             scene = new THREE.Scene();
+
+/*
             lighting = false;
 
             ambient = new THREE.AmbientLight(0xffffff, 1.0);
@@ -109,6 +111,23 @@
 
             backLight = new THREE.DirectionalLight(0xffffff, 1.0);
             backLight.position.set(100, 0, -100).normalize();
+*/
+
+            // lights
+
+            light = new THREE.DirectionalLight( 0xffffff );
+            light.position.set( 1, 1, 1 );
+            scene.add( light );
+
+            light = new THREE.DirectionalLight( 0xffffff );
+            light.position.set( -500, -500, -1 );
+            scene.add( light );
+
+            light = new THREE.DirectionalLight( 0xffffff );
+            light.position.set( -10, -10, -1 );
+            scene.add( light );
+
+
 
             /* Model */
 
@@ -135,7 +154,26 @@
 
             /* Renderer */
 
-            renderer = new THREE.WebGLRenderer();
+            // renderer
+          /*
+            scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+            renderer = new THREE.WebGLRenderer( { antialias: false } );
+            renderer.setClearColor( scene.fog.color, 1 );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+            container = document.getElementById( 'container' );
+            container.appendChild( renderer.domElement );
+
+            window.addEventListener( 'resize', onWindowResize, false );
+
+*/
+
+           // renderer = new THREE.WebGLRenderer( { antialias: false } );
+
+            //scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+            renderer = new THREE.WebGLRenderer( { antialias: false } );
+         //   renderer = new THREE.WebGLRenderer();
+         //   renderer.setClearColor( scene.fog.color, 1 );
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
@@ -155,7 +193,7 @@
             /* Events */
 
             window.addEventListener('resize', onWindowResize, false);
-            window.addEventListener('keydown', onKeyboardEvent, false);
+  //          window.addEventListener('keydown', onKeyboardEvent, false);
 
         }
 
