@@ -1,0 +1,61 @@
+.onepix-imgloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+}
+
+/* hide the second element in the loading container */
+.loading-container > *:not(.onepix-imgloader) {
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	-khtml-opacity: 0;
+	opacity: 0;
+
+}
+
+.loading-container {
+	position: relative;
+	background: #dfdfdf;
+	# min-height: 40px;
+	# height: 400px;
+}
+
+#container {
+	#min-height: 400px;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: hsl(0, 0%, 10%);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.left,
+.right {
+    position: absolute;
+    color: #fff;
+    font-family: Geneva, sans-serif;
+}
+
+.left {
+    bottom: 1em;
+    left: 1em;
+    text-align: left;
+}
+
+.right {
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+a {
+    color: #f58231;
+}

@@ -14,42 +14,10 @@
     <script src="OBJLoader.js"></script>
     <script src="MTLLoader.js"></script>
 
-    <style>
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            background: hsl(0, 0%, 10%);
-        }
+    <script src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        .left,
-        .right {
-            position: absolute;
-            color: #fff;
-            font-family: Geneva, sans-serif;
-        }
-
-        .left {
-            bottom: 1em;
-            left: 1em;
-            text-align: left;
-        }
-
-        .right {
-            top: 0;
-            right: 0;
-            text-align: right;
-        }
-
-        a {
-            color: #f58231;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body style="background-color: white">
@@ -66,10 +34,14 @@
 
             </td>
             <td>
-                <div id="mid">
-                    <p>Ford Edge 2016 - 3D View<p>
 
+                <div class = "loading-container">
+                    <span id="loading-msg">Please wait, loading... <span>
+                    <div id="container">
+                    </div>
                 </div>
+
+
             </td>
             <td>
                 Right Side
@@ -91,8 +63,8 @@
         }
 
         var container;
-        var canvas_width = 400;
-        var canvas_height = 300;
+        var canvas_width = 450;
+        var canvas_height = 350;
 
 
         var camera, controls, scene, renderer;
@@ -109,7 +81,7 @@
             container = document.createElement('div');
            // document.body.appendChild(container);
 
-            document.getElementById("mid").appendChild(container);
+            document.getElementById("container").appendChild(container);
 
             /* Camera */
 
@@ -163,7 +135,24 @@
                 //materials.materials.default.map.magFilter = THREE.NearestFilter;
               //  materials.materials.default.map.minFilter = THREE.LinearFilter;
 
-                var objLoader = new THREE.OBJLoader();
+
+                // initialize the manager to handle all loaded events
+                manager = new THREE.LoadingManager();
+
+                manager.onProgress = function(item, loaded, total){
+                    console.log(item, loaded, total);
+                };
+
+                manager.onLoad = function() {
+                    console.log("all items loaded");
+                    allItemsLoaded();
+                };
+
+                manager.onError = function() {
+                    console.log("there has been an error");
+                };
+
+                var objLoader = new THREE.OBJLoader(manager);
                 objLoader.setMaterials(materials);
                 objLoader.setPath('assets/');
 
@@ -266,6 +255,12 @@
 
         }
 
+        function allItemsLoaded() {
+            $('.onepix-imgloader').fadeOut();
+            $('.loading-container > *:not(.onepix-imgloader)').fadeTo(8000, 100);
+            $('#loading-msg').empty();
+        }
+
         function animate() {
 
             requestAnimationFrame(animate);
@@ -283,6 +278,32 @@
         }
 
     </script>
+
+
+<script>
+    // to display loading animation before it's ready
+    $(document).ready(function() {
+        if($(".loading-container").length){
+            // to show loading animation
+            $imgloader = $('.loading-container');
+            //$loadingimg = $("<div id='canvasloader-container' class='onepix-imgloader'></div>");
+
+            $imgloader.prepend('<div id="canvasloader-container" class="onepix-imgloader"></div>');
+
+            // canvas loader code
+            var cl = new CanvasLoader("canvasloader-container");
+            cl.setColor('#4f4f4f');
+            cl.setDiameter(30);
+            cl.setDensity(75);
+            cl.setRange(0.7);
+            cl.setSpeed(10);
+            cl.setFPS(22);
+            cl.show();
+
+        }
+
+    });
+</script>
 
 </body>
 </html>
