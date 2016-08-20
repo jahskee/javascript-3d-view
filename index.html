@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>WebGL 3D Model Viewer Using three.js</title>
+    <title>Product View - Ford Edge 2016</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,7 @@
     <script src="three.js"></script>
     <script src="Detector.js"></script>
     <script src="OrbitControls.js"></script>
+    <script src="TrackBallControls.js"></script>
     <script src="OBJLoader.js"></script>
     <script src="MTLLoader.js"></script>
 
@@ -127,8 +128,6 @@
             light.position.set( -10, -10, -1 );
             scene.add( light );
 
-
-
             /* Model */
 
             var mtlLoader = new THREE.MTLLoader();
@@ -181,14 +180,21 @@
             container.appendChild(renderer.domElement);
 
             /* Controls */
+            controls = new THREE.TrackballControls( camera );
 
-            // controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls = new THREE.OrbitControls(camera);
-            controls.addEventListener("change", render);
-           // controls.enableDamping = true;
-           // controls.dampingFactor = 0.25;
-           // controls.enableZoom = false;
-          //  controls.enableRotate=true;
+            controls.rotateSpeed = 10.0;
+            controls.zoomSpeed = 1.2;
+            controls.panSpeed = 0.8;
+
+            controls.noZoom = false;
+            controls.noPan = false;
+
+            controls.staticMoving = true;
+            controls.dynamicDampingFactor = 0.3;
+
+            controls.keys = [ 65, 83, 68 ];
+
+            controls.addEventListener( 'change', render );
 
             /* Events */
 
