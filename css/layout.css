@@ -28,6 +28,6 @@ body{
     padding: 0;
     margin-top: 20px;
     background-color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 </style>
