@@ -93,12 +93,12 @@ function init() {
     });
 
 
-    renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer = new THREE.WebGLRenderer({ alpha: false });
     renderer.setPixelRatio(window.devicePixelRatio);
 
     renderer.setSize(canvas_width, canvas_height);
-    //renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
-    renderer.setClearColor( 0xffffff, 0);
+    renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
+    //renderer.setClearColor( 0xffffff, 0);
     container.appendChild(renderer.domElement);
 
     /* Controls */
