@@ -1,5 +1,5 @@
 .mid_panel_grp{
-    width:800px;
+    /* width:800px;*/
     text-align: center;
 }
 #product_header{
@@ -10,24 +10,29 @@
 }
 
 .right_panel_grp{
-    width:400px;
+    width:300px;
     background-color: black;
 }
 
 .left_panel_grp{
-    width:400px;
+    width:300px;
     background-color: black;
 }
 
 #menu_bar{
     height: 20px;
 }
+table{
+    border-collapse: collapse;
 
+}
 body{
+
     margin: 0;
     padding: 0;
     margin-top: 20px;
-    background-color: white;
+    background-color: black;
     /* overflow: hidden; */
+    font-family:verdana;
+    font-color: lightgray;
 }
-</style>

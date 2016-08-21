@@ -7,19 +7,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="packages/three.js"></script>
-    <script src="packages/Detector.js"></script>
-    <script src="packages/OrbitControls.js"></script>
-    <script src="packages/TrackBallControls.js"></script>
-    <script src="packages/OBJLoader.js"></script>
-    <script src="packages/MTLLoader.js"></script>
+    <script src="js_packages/three.js"></script>
+    <script src="js_packages/Detector.js"></script>
+    <script src="js_packages/OrbitControls.js"></script>
+    <script src="js_packages/TrackBallControls.js"></script>
+    <script src="js_packages/OBJLoader.js"></script>
+    <script src="js_packages/MTLLoader.js"></script>
 
     <script src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js"></script>
     <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" href="css/panel3d.css">
+    <link rel="stylesheet" type="text/css" href="css/3dloading.css">
+    <link rel="stylesheet" type="text/css" href="css/3dcontainer.css">
 
 
 </head>
@@ -27,12 +28,13 @@
 <body >
 
 
-    <table border="0">
+    <table border="0" style="background-color:lightgray;">
         <tr>
             <td class="left_panel_grp">
             </td>
 
             <td class="mid_panel_grp">
+                <div w3-include-html="header.html"></div>
                 <image src="images/header00.jpg"> </image>
             </td>
             <td   class="right_panel_grp" >
@@ -75,7 +77,7 @@
                 <div id="product_header">
                     Ford Edge 2016:
                 </div>
-                <table border="1" width="100%">
+                <table border="0" width="100%">
                     <tr>
                         <td id="photo_view_panel" width="50%">
                             hello world
@@ -85,7 +87,7 @@
                                 <div id="container">
                                 </div>
                             </div>
-                            <div id="loading-msg">Please wait, loading... <div>
+                            <div id="loading-msg"><b>Please wait, 3D loading... </b><div>
                         </td>
                     </tr>
                 </table>
@@ -97,9 +99,19 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3">
-                <center> <h3>Footer</h3> </center>
+            <td class="left_panel_grp"></td>
+            <td >
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <center> <p>©2016 CS50 Project.
+                <br>
+
+                    All rights reserved.</p> </center>
             </td>
+            <td class="right_panel_grp"></td>
         </tr>
 
 

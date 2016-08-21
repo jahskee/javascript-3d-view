@@ -1,7 +1,7 @@
 .onepix-imgloader {
     position: absolute;
-    top: 50%;
-    left: 50%;
+     top: 50%;
+     left: 50%;
     z-index: 1000;
 }
 
@@ -16,10 +16,6 @@
 
 .loading-container {
     position: relative;
-    background: #dfdfdf;
+    /*  background: #dfdfdf; */
 
-}
-
-#container {
-    #min-height: 400px;
 }

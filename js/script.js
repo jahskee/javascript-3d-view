@@ -3,7 +3,7 @@ if (!Detector.webgl) {
 }
 
 var container;
-var canvas_width = 450;
+var canvas_width = 550;
 var canvas_height = 350;
 
 
@@ -26,8 +26,8 @@ function init() {
     /* Camera */
 
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.z = 800;
-    camera.position.y = -300;
+    camera.position.z = 500;
+  //  camera.position.y = -300;
 
     /* Scene */
 
@@ -74,19 +74,31 @@ function init() {
 
         objLoader.load('ford_edge_2015.obj', function (object) {
 
+
+            // perspective view
+            object.rotation.x = -1.00;
+            object.rotation.y = -0.06;
+            object.rotation.z = 0.70;
+
+            object.position.x = -25;
+            object.position.y = -20;
+            object.position.z = -50;
+            // end of perspective view
+
             scene.add(object);
+
 
         });
 
     });
 
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
 
     renderer.setSize(canvas_width, canvas_height);
-    renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
-
+    //renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
+    renderer.setClearColor( 0xffffff, 0);
     container.appendChild(renderer.domElement);
 
     /* Controls */
