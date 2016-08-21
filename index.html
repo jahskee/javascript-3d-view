@@ -2,105 +2,97 @@
 <html>
 <head>
 
-    <title>Product View - Ford Edge 2016</title>
+    <title>3D Expo 2016 - Ford Edge 2016</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="three.js"></script>
-    <script src="Detector.js"></script>
-    <script src="OrbitControls.js"></script>
-    <script src="TrackBallControls.js"></script>
-    <script src="OBJLoader.js"></script>
-    <script src="MTLLoader.js"></script>
+    <script src="packages/three.js"></script>
+    <script src="packages/Detector.js"></script>
+    <script src="packages/OrbitControls.js"></script>
+    <script src="packages/TrackBallControls.js"></script>
+    <script src="packages/OBJLoader.js"></script>
+    <script src="packages/MTLLoader.js"></script>
 
     <script src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js"></script>
     <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-<style>
-    .mid_panel{
-        width:800px;
-        text-align: center;
-    }
-    .right_panel{
-        width:400px;
-    }
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/panel3d.css">
 
-    .left_panel{
-        width:400px;
-    }
 
-    #menu_bar{
-        height: 20px;
-    }
-
-    body{
-        margin-top: 20px;
-        background-color: white;
-    }
-</style>
 </head>
 
 <body >
 
 
-    <table border="1">
+    <table border="0">
         <tr>
-            <td class="right_panel">
+            <td class="left_panel_grp">
             </td>
 
-            <td class="mid_panel">
+            <td class="mid_panel_grp">
                 <image src="images/header01.jpg"> </image>
             </td>
-            <td   class="left_panel" >
+            <td   class="right_panel_grp" >
             </td>
 
         </tr>
 
         <tr>
-            <td class="right_panel">
+            <td   class="left_panel_grp" >
             </td>
 
             <td id="menu_bar" class="mid_panel">
 
             </td>
-            <td   class="left_panel" >
+            <td class="right_panel_grp">
+            </td>
+
+
+        </tr>
+
+
+        <tr>
+            <td class="left_panel_grp" >
+            </td>
+
+            <td  class="mid_panel_grp">
+
+            </td>
+            <td class="right_panel_grp" >
             </td>
 
         </tr>
 
 
         <tr>
-            <td class="left_panel" >
+            <td  class="left_panel_grp">
             </td>
 
-            <td align="center" class=""mid_panel">
-
-            </td>
-            <td class="right_panel" >
-            </td>
-
-        </tr>
-
-
-        <tr>
-            <td>
-
-            </td>
-            <td align = "center" class="midpanel">
-                <div id="product_summary">
+            <td id="product_panel" class="mid panel_grp">
+                <div id="product_header">
                     Ford Edge 2016:
                 </div>
+                <table border="1">
+                    <tr>
+                        <td id="photo_view_panel" width="50%">
 
-                <div class = "loading-container">
-                    <div id="container">
-                    </div>
-                </div>
-                <div id="loading-msg">Please wait, loading... <div>
+                        </td>
+                        <td id="3d_view_panel">
+                            <div class = "loading-container">
+                                <div id="container">
+                                </div>
+                            </div>
+                            <div id="loading-msg">Please wait, loading... <div>
+                        </td>
+                    </tr>
+                </table>
 
             </td>
-            <td>
+
+            <td class="right_panel_grp">
                 Right Side
             </td>
         </tr>
@@ -113,254 +105,30 @@
 
     </table>
 
+    <script src="js/script.js"></script>
+
     <script>
-
-        if (!Detector.webgl) {
-            Detector.addGetWebGLMessage();
-        }
-
-        var container;
-        var canvas_width = 450;
-        var canvas_height = 350;
-
-
-        var camera, controls, scene, renderer;
-        var lighting, ambient, keyLight, fillLight, backLight;
-
-        var windowHalfX = window.innerWidth / 2;
-        var windowHalfY = (window.innerHeight / 2);
-
-        init();
-        animate();
-
-        function init() {
-
-            container = document.createElement('div');
-           // document.body.appendChild(container);
-
-            document.getElementById("container").appendChild(container);
-
-            /* Camera */
-
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-            camera.position.z = 800;
-            camera.position.y = -300;
-
-            /* Scene */
-
-            scene = new THREE.Scene();
-
-/*
-            lighting = false;
-
-            ambient = new THREE.AmbientLight(0xffffff, 1.0);
-            scene.add(ambient);
-
-            keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-            keyLight.position.set(-100, 0, 100);
-
-            fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-            fillLight.position.set(100, 0, 100);
-
-            backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-            backLight.position.set(100, 0, -100).normalize();
-*/
-
-            // lights
-
-            light = new THREE.DirectionalLight( 0xffffff );
-            light.position.set( 1, 1, 1 );
-            scene.add( light );
-
-            light = new THREE.DirectionalLight( 0xffffff );
-            light.position.set( -500, -500, -1 );
-            scene.add( light );
-
-         //   light = new THREE.DirectionalLight( 0xffffff );
-         //   light.position.set( -10, -10, -1 );
-        //    scene.add( light );
-
-            /* Model */
-
-            var mtlLoader = new THREE.MTLLoader();
-            mtlLoader.setBaseUrl('assets/');
-            mtlLoader.setPath('assets/');
-            mtlLoader.load('ford_edge_2015.mtl', function (materials) {
-
-                materials.preload();
-
-                //materials.materials.default.map.magFilter = THREE.NearestFilter;
-              //  materials.materials.default.map.minFilter = THREE.LinearFilter;
-
-
-                // initialize the manager to handle all loaded events
-                manager = new THREE.LoadingManager();
-
-                manager.onProgress = function(item, loaded, total){
-                    console.log(item, loaded, total);
-                };
-
-                manager.onLoad = function() {
-                    console.log("all items loaded");
-                    allItemsLoaded();
-                };
-
-                manager.onError = function() {
-                    console.log("there has been an error");
-                };
-
-                var objLoader = new THREE.OBJLoader(manager);
-                objLoader.setMaterials(materials);
-                objLoader.setPath('assets/');
-
-                objLoader.load('ford_edge_2015.obj', function (object) {
-
-                    scene.add(object);
-
-                });
-
-            });
-
-            /* Renderer */
-
-            // renderer
-          /*
-            scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-            renderer = new THREE.WebGLRenderer( { antialias: false } );
-            renderer.setClearColor( scene.fog.color, 1 );
-            renderer.setSize( window.innerWidth, window.innerHeight );
-
-            container = document.getElementById( 'container' );
-            container.appendChild( renderer.domElement );
-
-            window.addEventListener( 'resize', onWindowResize, false );
-
-*/
-
-           // renderer = new THREE.WebGLRenderer( { antialias: false } );
-
-            //scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-           // renderer = new THREE.WebGLRenderer( { antialias: false } );
-            renderer = new THREE.WebGLRenderer();
-         //   renderer.setClearColor( scene.fog.color, 1 );
-            renderer.setPixelRatio(window.devicePixelRatio);
-            //renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setSize(canvas_width, canvas_height);
-            renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
-
-            container.appendChild(renderer.domElement);
-
-            /* Controls */
-            controls = new THREE.TrackballControls( camera );
-
-            controls.rotateSpeed = 10.0;
-            controls.zoomSpeed = 1.2;
-            controls.panSpeed = 0.8;
-
-            controls.noZoom = false;
-            controls.noPan = false;
-
-            controls.staticMoving = true;
-            controls.dynamicDampingFactor = 0.3;
-
-            controls.keys = [ 65, 83, 68 ];
-
-            controls.addEventListener( 'change', render );
-
-            /* Events */
-
-            window.addEventListener('resize', onWindowResize, false);
-  //          window.addEventListener('keydown', onKeyboardEvent, false);
-
-        }
-
-        function onWindowResize() {
-
-            windowHalfX = window.innerWidth / 2;
-            windowHalfY = window.innerHeight / 2;
-
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(canvas_width, canvas_height);
-            //renderer.setSize(window.innerWidth, window.innerHeight);
-
-        }
-
-        function onKeyboardEvent(e) {
-
-            if (e.code === 'KeyL') {
-
-                lighting = !lighting;
-
-                if (lighting) {
-
-                    ambient.intensity = 0.25;
-                    scene.add(keyLight);
-                    scene.add(fillLight);
-                    scene.add(backLight);
-
-                } else {
-
-                    ambient.intensity = 1.0;
-                    scene.remove(keyLight);
-                    scene.remove(fillLight);
-                    scene.remove(backLight);
-
-                }
-
+        // to display loading animation before it's ready
+        $(document).ready(function() {
+            if($(".loading-container").length){
+                // to show loading animation
+                $imgloader = $('.loading-container');
+                //$loadingimg = $("<div id='canvasloader-container' class='onepix-imgloader'></div>");
+
+                $imgloader.prepend('<div id="canvasloader-container" class="onepix-imgloader"></div>');
+
+                // canvas loader code
+                var cl = new CanvasLoader("canvasloader-container");
+                cl.setColor('#4f4f4f');
+                cl.setDiameter(30);
+                cl.setDensity(75);
+                cl.setRange(0.7);
+                cl.setSpeed(10);
+                cl.setFPS(22);
+                cl.show();
             }
-
-        }
-
-        function allItemsLoaded() {
-            $('.onepix-imgloader').fadeOut();
-            $('.loading-container > *:not(.onepix-imgloader)').fadeTo(8000, 100);
-            $('#loading-msg').empty();
-        }
-
-        function animate() {
-
-            requestAnimationFrame(animate);
-
-            controls.update();
-
-            render();
-
-        }
-
-        function render() {
-
-            renderer.render(scene, camera);
-
-        }
-
+        });
     </script>
-
-
-<script>
-    // to display loading animation before it's ready
-    $(document).ready(function() {
-        if($(".loading-container").length){
-            // to show loading animation
-            $imgloader = $('.loading-container');
-            //$loadingimg = $("<div id='canvasloader-container' class='onepix-imgloader'></div>");
-
-            $imgloader.prepend('<div id="canvasloader-container" class="onepix-imgloader"></div>');
-
-            // canvas loader code
-            var cl = new CanvasLoader("canvasloader-container");
-            cl.setColor('#4f4f4f');
-            cl.setDiameter(30);
-            cl.setDensity(75);
-            cl.setRange(0.7);
-            cl.setSpeed(10);
-            cl.setFPS(22);
-            cl.show();
-
-        }
-
-    });
-</script>
 
 </body>
 </html>

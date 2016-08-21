@@ -1,0 +1,33 @@
+.mid_panel_grp{
+    width:800px;
+    text-align: center;
+}
+#product_header{
+    text-align: left;
+}
+#product_panel{
+    text-align: right;
+}
+
+.right_panel_grp{
+    width:400px;
+    background-color: black;
+}
+
+.left_panel_grp{
+    width:400px;
+    background-color: black;
+}
+
+#menu_bar{
+    height: 20px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+</style>

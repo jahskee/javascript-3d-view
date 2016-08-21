@@ -1,0 +1,28 @@
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.left,
+.right {
+    position: absolute;
+    color: #fff;
+    font-family: Geneva, sans-serif;
+}
+
+.left {
+    bottom: 1em;
+    left: 1em;
+    text-align: left;
+}
+
+.right {
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+a {
+    color: #f58231;
+}

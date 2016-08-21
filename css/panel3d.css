@@ -1,0 +1,26 @@
+.onepix-imgloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+}
+
+/* hide the second element in the loading container */
+.loading-container > *:not(.onepix-imgloader) {
+    filter:alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+
+}
+
+.loading-container {
+    position: relative;
+    background: #dfdfdf;
+    # min-height: 40px;
+    # height: 400px;
+}
+
+#container {
+    #min-height: 400px;
+}
