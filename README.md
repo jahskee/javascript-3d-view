@@ -30,3 +30,4 @@ USGH-EHZP-CTZS-ZPNE-NNNM-FPHM-KKTJ-LGOJ-VDTL
 -------------------
 
 4. Zbrush High Poly to Low Poly
+https://www.youtube.com/watch?v=pG2uDwTJLqQ
