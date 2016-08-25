@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5acbec0-3714-48c1-bca4-f300ce5c50e9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/female-croupier-2013-03-26.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/female-croupier-2013-03-26.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/female-croupier-2013-03-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/ford_edge_2015_max.mtl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/ford_edge_2015_max.obj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="view3d.iws" />
@@ -306,7 +311,7 @@
       <workItem from="1471765111011" duration="27000" />
       <workItem from="1471765279249" duration="4211000" />
       <workItem from="1471775259124" duration="14111000" />
-      <workItem from="1472129304648" duration="962000" />
+      <workItem from="1472129304648" duration="1047000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1471647899633</created>
@@ -329,17 +334,24 @@
       <option name="project" value="LOCAL" />
       <updated>1472130058946</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="yup&#10;">
+      <created>1472130291184</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472130291184</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20221000" />
+    <option name="totallyTimeSpent" value="20306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19363257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19363257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
