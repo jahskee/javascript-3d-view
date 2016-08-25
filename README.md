@@ -41,3 +41,4 @@ https://www.youtube.com/watch?v=pG2uDwTJLqQ
 2. Reduce Mesh geometry
    Mesh -> Reduce   
 
+3. Use GoZ to edit surface material with polypaint or UV
