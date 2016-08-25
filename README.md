@@ -31,3 +31,13 @@ USGH-EHZP-CTZS-ZPNE-NNNM-FPHM-KKTJ-LGOJ-VDTL
 
 4. Zbrush High Poly to Low Poly
 https://www.youtube.com/watch?v=pG2uDwTJLqQ
+
+
+------ Maya Workflow ---------------
+
+1. Enable OBJ export:
+   Windows -> Setting Preferences -> Plugin Manager
+   
+2. Reduce Mesh geometry
+   Mesh -> Reduce   
+
