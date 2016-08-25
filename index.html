@@ -15,13 +15,22 @@
     <script src="js_packages/MTLLoader.js"></script>
 
     <script src="http://heartcode-canvasloader.googlecode.com/files/heartcode-canvasloader-min-0.9.1.js"></script>
-    <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css">
     <link rel="stylesheet" type="text/css" href="css/3dloading.css">
     <link rel="stylesheet" type="text/css" href="css/3dcontainer.css">
 
+    <!-- Horizontal Menuu -->
+    <script src="https://s3.amazonaws.com/menumaker/menumaker.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="menu/menu_styles.css">
+    <script src="menu/menu_script.js"></script>
+
+    <!-- Vertical Menuu -->
+    <link rel="stylesheet" type="text/css" href="menu/menu_vert_styles.css">
+    <script src="menu/menu_vert_script.js"></script>
 
 </head>
 
@@ -44,9 +53,44 @@
 
         <tr>
             <td   class="left_panel_grp" >
+                <div id="cssmenu_vert">
+                    <ul>
+                        <li class="has-sub"><a href="#"><i class="fa fa-fw fa-bars"></i> Cars</a>
+                            <ul>
+                                <li><a href="#">Ford Edge 2016</a></li>
+                                <li><a href="#">Porsche Carrera</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub"><a href="#"><i class="fa fa-fw fa-cog"></i> Sculps</a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-fw fa-phone"></i> Environment</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </td>
 
             <td id="menu_bar" class="mid_panel">
+                <div id="cssmenu" class="align-center">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-bars"></i> Exhibit</a>
+                            <ul>
+                                <li><a href="#">Menu 1</a>
+                                    <ul>
+                                        <li><a href="#">Menu 1.1</a></li>
+                                        <li><a href="#">Menu 1.2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Menu 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-fw fa-rocket"></i> Project Info</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i> What is CS 50</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> About Me</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-phone"></i> Contact</a></li>
+                    </ul>
+                </div>
 
             </td>
             <td class="right_panel_grp">
