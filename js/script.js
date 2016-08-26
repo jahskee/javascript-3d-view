@@ -3,7 +3,7 @@ if (!Detector.webgl) {
 }
 
 var container;
-var canvas_width = 550;
+var canvas_width = 600;
 var canvas_height = 350;
 
 

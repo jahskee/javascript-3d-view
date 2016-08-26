@@ -15,11 +15,11 @@
 }
 
 .left_panel_grp{
-    width:300px;
     background-color: black;
 }
 
 #menu_bar{
+
     height: 20px;
 }
 table{
@@ -33,6 +33,6 @@ body{
     margin-top: 20px;
     background-color: black;
     /* overflow: hidden; */
-    font-family:verdana;
+    font-family:arial; verdana;
     font-color: lightgray;
 }
