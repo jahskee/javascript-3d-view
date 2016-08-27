@@ -321,7 +321,7 @@
     <script>
         // to display loading animation before it's ready
         $(document).ready(function() {
-            alert("hello1");
+
             if($(".loading-container").length){
                 // to show loading animation
                 $imgloader = $('.loading-container');
@@ -339,14 +339,11 @@
                 cl.setFPS(22);
                 cl.show();
             }
-
-
         });
     </script>
 
 <script>
     $(document).ready(function() {
-        alert("hello2");
         $('#cssmenuv > ul > li ul').each(function(index, e){
             var count = $(e).find('li').length;
             var content = '<span class=\"cnt\">' + count + '</span>';
