@@ -9,22 +9,28 @@ $(document).ready(function(){
     $('#cssmenuv ul ul li:odd').addClass('odd');
     $('#cssmenuv ul ul li:even').addClass('even');
     $('#cssmenuv > ul > li > a').click(function() {
-        $('#cssmenuv li').removeClass('active');
-        $(this).closest('li').addClass('active');
+      //  alert("test");
+      //  $('#cssmenuv li').removeClass('active');
+       // $(this).closest('li').addClass('active');
         var checkElement = $(this).next();
-        if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+
+     /*   if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
             $(this).closest('li').removeClass('active');
             checkElement.slideUp('normal');
-        }
+        }*/
         if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-            $('#cssmenuv ul ul:visible').slideUp('normal');
-            checkElement.slideDown('normal');
+         //   $('#cssmenuv ul ul:visible').slideUp('normal');
+           // checkElement.slideDown('normal');
         }
+
+        /*
         if($(this).closest('li').find('ul').children().length == 0) {
             return true;
         } else {
             return false;
-        }
+        }*/
     });
+
+    $('#cssmenuv > ul > li > a').click();
 });
 })(jQuery);
