@@ -43,4 +43,4 @@ https://www.youtube.com/watch?v=pG2uDwTJLqQ
 
 3. Use GoZ to edit surface material with polypaint or UV
 
-4. http://www.3dcadbrowser.com/
+4. Free 3d models from https://www.cgtrader.com
