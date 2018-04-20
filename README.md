@@ -19,16 +19,6 @@ Tools:
 Text creations:
 http://www.flamingtext.com/logo/Design-3D-Text
 
--------------------
-ZBrush 4R7 P3
-
-Request Code:
-FUEG-HMDR-FIKS-AHXB-CACY
-
-Activation Code:
-USGH-EHZP-CTZS-ZPNE-NNNM-FPHM-KKTJ-LGOJ-VDTL
--------------------
-
 4. Zbrush High Poly to Low Poly
 https://www.youtube.com/watch?v=pG2uDwTJLqQ
 
