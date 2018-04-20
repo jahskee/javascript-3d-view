@@ -1,5 +1,7 @@
 # WebGL 3D Model Viewer Using three.js
 
+![alt text](http://storage9.static.itmages.com/i/18/0420/h_1524235608_6421345_a697aacc12.png)
+
 ## Specification
 
 * OBJ loader for loading a geometry format that is as old and widely supported as GIFs.
